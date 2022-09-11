@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Movie Info Searcher</title>
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+          integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+          crossorigin="anonymous"
+          referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="../static/css/main.css">
+</head>
+<body>
+<div class = "wrapper">
+
+    <div class = "logo">
+        <div class = "container">
+            <p>Movie<span>Info</span> Searcher</p>
+        </div>
+    </div>
+
+    <div class = "search-container">
+        <div class = "search-element">
+            <h3>Search Movie:</h3>
+            <input type = "text" class = "form-control" placeholder="Search Movie Title ..." id = "movie-search-box">
+            <button onclick = "loadMovies()">Search</button>
+
+            <div class = "search-list" id = "search-list">
+            </div>
+        </div>
+    </div>
+
+    <div class = "container">
+        <div class = "result-container">
+            <div class = "result-grid" id = "result-grid">
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+    <script src='../static/js/script.js'></script>
+</body>
+</html>
