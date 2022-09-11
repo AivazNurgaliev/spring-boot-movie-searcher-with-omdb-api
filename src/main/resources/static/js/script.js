@@ -21,7 +21,7 @@ function displayMovieList(movies){
         if(movies[idx].Poster != "N/A")
             moviePoster = movies[idx].Poster;
         else
-            moviePoster = "image_not_found.png";
+            moviePoster = "https://sun6-21.userapi.com/s/v1/ig2/WQo3ZaP0xNQxBPqcpEq_eSkiKblznoWTr3l0PznJ5SDIZZxXHuI7LVwHqNnAeQWohZTDaNCvx7Xqvvr5KHTmuqdv.jpg?size=400x0&quality=96&crop=143,23,433,433&ava=1";
 
         movieListItem.innerHTML = `
         <div class = "search-item-thumbnail">
@@ -55,7 +55,9 @@ function loadMovieDetails(){
 function displayMovieDetails(details){
     resultGrid.innerHTML = `
     <div class = "movie-poster">
-        <img src = "${(details.Poster != "N/A") ? details.Poster : "image_not_found.png"}" alt = "movie poster">
+        <img src = "${(details.Poster != "N/A") ? details.Poster : "" +
+        "https://sun6-21.userapi.com/s/v1/ig2/WQo3ZaP0xNQxBPqcpEq_eSkiKblznoWTr3l0PznJ5SDIZZxXHuI7LVwHqNnAeQWohZTDaNCvx7Xqvvr5KHTmuqdv.jpg?size=400x0&quality=96&crop=143,23,433,433&ava=1"}"
+         alt = "movie poster">
     </div>
     <div class = "movie-info">
         <h3 class = "movie-title">${details.Title}</h3>
