@@ -21,11 +21,30 @@
         </div>
     </div>
 
+<!--
+    <div class = "account">
+        <div class = "container">
+            <form action="http://localhost:8080/api/v1/account/get">
+                <input type="submit" value="Go to Account" />
+            </form>
+        </div>
+    </div>
+-->
+
     <div class = "search-container">
         <div class = "search-element">
             <h3>Search Movie:</h3>
             <input type = "text" class = "form-control" placeholder="Search Movie Title ..." id = "movie-search-box">
-            <button onclick = "loadMovies()">Search</button>
+            <!--<input type = "text" class = "form-control" placeholder="type..." id = "type-box">-->
+            <select class = "form-control" id="type-box">
+                <option value="">Any</option>
+
+                <option value="movie">Movie</option>
+
+                <option value="series">Series</option>
+            </select>
+            <input type = "text" class = "form-control" placeholder="year..." id = "year-box">
+            <button class = "form-control" onclick = "loadMovies()">Search</button>
 
             <div class = "search-list" id = "search-list">
             </div>

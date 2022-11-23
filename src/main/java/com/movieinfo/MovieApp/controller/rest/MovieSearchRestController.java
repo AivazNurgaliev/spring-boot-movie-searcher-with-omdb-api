@@ -1,23 +1,16 @@
-package com.movieinfo.MovieApp.controller;
+package com.movieinfo.MovieApp.controller.rest;
 
-import com.google.gson.Gson;
 import com.google.gson.JsonParseException;
 import com.movieinfo.MovieApp.exception.MovieNotFoundException;
-import com.movieinfo.MovieApp.pojo.BriefMovieInfo;
-import com.movieinfo.MovieApp.pojo.MovieInfo;
-import com.movieinfo.MovieApp.pojo.MovieSearchInfo;
 import com.movieinfo.MovieApp.util.MovieUtil;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.client.RestTemplate;
 import org.springframework.web.server.ResponseStatusException;
 
-import java.util.List;
-
 @RestController
-public class MovieSearchController {
+public class MovieSearchRestController {
 
     @GetMapping("/movie/byId")
     public String getMovieById(@RequestParam String id) {
@@ -34,9 +27,11 @@ public class MovieSearchController {
     }
 
     @GetMapping("/movie/byName")
-    public String getMoviesByName(@RequestParam String name) {
+    public String getMoviesByName(@RequestParam String name,
+                                  @RequestParam String type,
+                                  @RequestParam String y) {
         try {
-            String movieSearchInfo = MovieUtil.makeRequestByName(name);
+            String movieSearchInfo = MovieUtil.makeRequestByName(name, type, y);
             return movieSearchInfo;
         } catch (JsonParseException e) {
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST, e.getMessage());

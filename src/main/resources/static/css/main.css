@@ -66,6 +66,8 @@ img{
     font-weight: 500;
     margin-bottom: 1.5rem;
 }
+
+
 .search-element .form-control{
     padding: 1rem 2rem;
     font-size: 1.4rem;
@@ -213,6 +215,8 @@ img{
 .movie-info .metascore{
     margin: 0.5rem auto;
 }
+
+
 
 @media(max-width: 450px){
     .logo p{

@@ -1,4 +1,4 @@
-package com.movieinfo.MovieApp.pojo;
+package com.movieinfo.MovieApp.model.utility;
 
 import com.google.gson.annotations.SerializedName;
 

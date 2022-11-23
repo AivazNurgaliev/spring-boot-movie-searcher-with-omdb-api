@@ -1,8 +1,10 @@
-package com.movieinfo.MovieApp.pojo;
+package com.movieinfo.MovieApp.model;
 
 import com.google.gson.annotations.SerializedName;
+import com.movieinfo.MovieApp.model.utility.Rating;
 
 import java.util.List;
+import java.util.Objects;
 
 public class MovieInfo {
 
@@ -254,6 +256,20 @@ public class MovieInfo {
 
     public void setResponse(String response) {
         this.response = response;
+    }
+
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        MovieInfo movieInfo = (MovieInfo) o;
+        return Objects.equals(title, movieInfo.title) && Objects.equals(year, movieInfo.year) && Objects.equals(rated, movieInfo.rated) && Objects.equals(released, movieInfo.released) && Objects.equals(runtime, movieInfo.runtime) && Objects.equals(genre, movieInfo.genre) && Objects.equals(director, movieInfo.director) && Objects.equals(writer, movieInfo.writer) && Objects.equals(actors, movieInfo.actors) && Objects.equals(plot, movieInfo.plot) && Objects.equals(language, movieInfo.language) && Objects.equals(country, movieInfo.country) && Objects.equals(awards, movieInfo.awards) && Objects.equals(poster, movieInfo.poster) && Objects.equals(rating, movieInfo.rating) && Objects.equals(metascore, movieInfo.metascore) && Objects.equals(imdbRating, movieInfo.imdbRating) && Objects.equals(imdbVotes, movieInfo.imdbVotes) && Objects.equals(imdbID, movieInfo.imdbID) && Objects.equals(type, movieInfo.type) && Objects.equals(dvd, movieInfo.dvd) && Objects.equals(boxOffice, movieInfo.boxOffice) && Objects.equals(production, movieInfo.production) && Objects.equals(website, movieInfo.website) && Objects.equals(response, movieInfo.response);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(title, year, rated, released, runtime, genre, director, writer, actors, plot, language, country, awards, poster, rating, metascore, imdbRating, imdbVotes, imdbID, type, dvd, boxOffice, production, website, response);
     }
 
     @Override

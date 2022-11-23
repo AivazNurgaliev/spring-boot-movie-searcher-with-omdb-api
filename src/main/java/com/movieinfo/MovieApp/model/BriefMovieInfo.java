@@ -1,6 +1,8 @@
-package com.movieinfo.MovieApp.pojo;
+package com.movieinfo.MovieApp.model;
 
 import com.google.gson.annotations.SerializedName;
+
+import java.util.Objects;
 
 public class BriefMovieInfo {
 
@@ -59,6 +61,19 @@ public class BriefMovieInfo {
     }
 
     @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        BriefMovieInfo that = (BriefMovieInfo) o;
+        return Objects.equals(title, that.title) && Objects.equals(year, that.year) && Objects.equals(imdbID, that.imdbID) && Objects.equals(type, that.type) && Objects.equals(poster, that.poster);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(title, year, imdbID, type, poster);
+    }
+
+    @Override
     public String toString() {
         return "BriefMovieInfo{" +
                 "title='" + title + '\'' +
@@ -68,4 +83,7 @@ public class BriefMovieInfo {
                 ", poster='" + poster + '\'' +
                 '}';
     }
+
+
+
 }

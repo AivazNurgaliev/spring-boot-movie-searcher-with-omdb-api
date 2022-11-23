@@ -1,10 +1,14 @@
 const movieSearchBox = document.getElementById('movie-search-box');
+const typeBox = document.getElementById('type-box');
+const yearBox = document.getElementById('year-box');
 const searchList = document.getElementById('search-list');
 const resultGrid = document.getElementById('result-grid');
 
 async function loadMovies(){
     var searchTerm = document.getElementById('movie-search-box').value;
-    const URL = `http://localhost:8080/movie/byName?name=${searchTerm}&page=1&apikey=3fe95daa`;
+    var type = document.getElementById('type-box').value;
+    var year = document.getElementById('year-box').value;
+    const URL = `http://localhost:8080/movie/byName?name=${searchTerm}&page=1&apikey=3fe95daa&type=${type}&y=${year}`;
     const res = await fetch(`${URL}`);
     const data = await res.json();
     console.log(data.Search);
