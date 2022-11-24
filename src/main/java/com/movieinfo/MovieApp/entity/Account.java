@@ -39,7 +39,7 @@ public class Account {
     @NotNull
     private AccountStatus status;
 
-    @OneToMany(mappedBy = "account")
+    @OneToMany(mappedBy = "account", cascade = CascadeType.REMOVE, orphanRemoval = true)
     private List<Movie> movieList;
 
     public Integer getAccountId() {
